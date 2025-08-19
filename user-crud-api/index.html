@@ -75,5 +75,26 @@
         </li>
         <li><strong>DELETE /api/allergens/:id</strong> - Verwijder een allergen</li>
     </ul>
+
+    <h2>Allergens Search</h2>
+    <ul>
+        <li>
+            <strong>GET /api/allergens/search</strong> - Zoek allergens op name of description
+            <ul>
+                <li>Query params:
+                    <ul>
+                        <li><code>name</code> - (string) partial match, case-insensitive</li>
+                        <li><code>description</code> - (string) partial match, case-insensitive</li>
+                        <li><code>limit</code> - (number, default 10)</li>
+                        <li><code>offset</code> - (number, default 0)</li>
+                        <li><code>sortBy</code> - veld om op te sorteren (default "name")</li>
+                        <li><code>sortOrder</code> - "asc" of "desc" (default "asc")</li>
+                    </ul>
+                </li>
+                <li>Voorbeeld: <code>/api/allergens/search?name=pinda&limit=5&sortBy=name&sortOrder=asc</code></li>
+            </ul>
+        </li>
+    </ul>
+
 </body>
 </html>

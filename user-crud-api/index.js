@@ -5,12 +5,14 @@ const userRoutes = require('./routes/userRoutes');
 const searchRouter = require('./routes/search');
 const path = require('path');
 const allergenRoutes = require('./routes/allergenRoutes');
+const allergenSearchRouter = require('./routes/allergenSearch');
 
 const app = express();
 connectDB();
 
 app.use(bodyParser.json());
 app.use('/api/users/search', searchRouter);
+app.use('/api/allergens/search', allergenSearchRouter);
 app.use('/api/users', userRoutes);
 app.use('/api/allergens', allergenRoutes);
 

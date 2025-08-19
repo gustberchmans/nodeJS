@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>API Documentatie</title>
+</head>
+<body>
+    <h1>API Documentatie</h1>
+
+    <h2>Users CRUD</h2>
+    <ul>
+        <li>
+            <strong>GET /api/users</strong> - Haal alle users op
+            <ul>
+                <li>Query params: <code>limit</code>, <code>offset</code> (optioneel)</li>
+            </ul>
+        </li>
+        <li><strong>GET /api/users/:id</strong> - Haal één user op via ID</li>
+        <li>
+            <strong>POST /api/users</strong> - Maak een nieuwe user
+            <ul>
+                <li>Body (JSON): <code>{ "name": "Bob", "email": "bob@example.com", "age": 25 }</code></li>
+            </ul>
+        </li>
+        <li>
+            <strong>PUT /api/users/:id</strong> - Update een bestaande user
+            <ul>
+                <li>Body (JSON) met velden die je wilt updaten</li>
+            </ul>
+        </li>
+        <li><strong>DELETE /api/users/:id</strong> - Verwijder een user</li>
+    </ul>
+
+    <h2>Users Search</h2>
+    <ul>
+        <li>
+            <strong>GET /api/users/search</strong> - Zoek users op name, email of age
+            <ul>
+                <li>Query params:
+                    <ul>
+                        <li><code>name</code> - (string) partial match, case-insensitive</li>
+                        <li><code>email</code> - (string) partial match, case-insensitive</li>
+                        <li><code>age</code> - (number)</li>
+                        <li><code>limit</code> - (number, default 10)</li>
+                        <li><code>offset</code> - (number, default 0)</li>
+                        <li><code>sortBy</code> - veld om op te sorteren (default "name")</li>
+                        <li><code>sortOrder</code> - "asc" of "desc" (default "asc")</li>
+                    </ul>
+                </li>
+                <li>Voorbeeld: <code>/api/users/search?name=bo&age=25&limit=5&offset=0&sortBy=age&sortOrder=desc</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Allergens CRUD</h2>
+    <ul>
+        <li>
+            <strong>GET /api/allergens</strong> - Haal alle allergens op
+            <ul>
+                <li>Query params: <code>limit</code>, <code>offset</code>, <code>sortBy</code>, <code>sortOrder</code></li>
+            </ul>
+        </li>
+        <li><strong>GET /api/allergens/:id</strong> - Haal één allergen op via ID</li>
+        <li>
+            <strong>POST /api/allergens</strong> - Maak een nieuwe allergen
+            <ul>
+                <li>Body (JSON): <code>{ "name": "Pinda", "description": "Kan allergische reacties veroorzaken" }</code></li>
+            </ul>
+        </li>
+        <li>
+            <strong>PUT /api/allergens/:id</strong> - Update een bestaande allergen
+            <ul>
+                <li>Body (JSON) met velden die je wilt updaten</li>
+            </ul>
+        </li>
+        <li><strong>DELETE /api/allergens/:id</strong> - Verwijder een allergen</li>
+    </ul>
+</body>
+</html>
